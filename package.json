@@ -1,0 +1,52 @@
+{
+  "publisher": "kermanx",
+  "name": "speedscope-vscode",
+  "displayName": "Speedscope Viewer",
+  "description": "Speedscope viewer with auto refresh",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "categories": [
+    "Visualization"
+  ],
+  "extensionKind":[
+    "ui"
+  ],
+  "main": "./dist/extension.cjs",
+  "icon": "./icon.png",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "contributes": {
+		"customEditors": [
+			{
+				"viewType": "speedscope-vscode.speedscope",
+				"displayName": "Speedscope",
+				"selector": [
+					{
+						"filenamePattern": "*"
+					}
+				]
+			}
+		]
+  },
+  "scripts": {
+    "build": "tsup --env.NODE_ENV production --treeshake",
+    "dev": "tsup --watch ./src --env.NODE_ENV development",
+    "typecheck": "tsc --noEmit",
+    "vscode:prepublish": "pnpm run build"
+  },
+  "devDependencies": {
+    "@types/node": "18.x",
+    "@types/vscode": "^1.89.0",
+    "reactive-vscode": "^0.2.9",
+    "speedscope": "^1.21.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KermanX/speedscope-vscode.git"
+  },
+  "packageManager": "pnpm@9.14.2"
+}
