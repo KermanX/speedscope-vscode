@@ -4,7 +4,7 @@
   "displayName": "Speedscope Viewer",
   "description": "Speedscope viewer with auto refresh",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "categories": [
     "Visualization"
@@ -22,6 +22,7 @@
 			{
 				"viewType": "speedscope-vscode.speedscope",
 				"displayName": "Speedscope",
+        "priority": "option",
 				"selector": [
 					{
 						"filenamePattern": "*"
